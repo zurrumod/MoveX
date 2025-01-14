@@ -1,0 +1,166 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #27ae60, #f39c12);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background 0.3s ease;
+}
+
+body.dark-mode {
+    background: #2c3e50;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    animation: fadeIn 1s ease-in-out;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #f1c40f;
+}
+
+nav.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+nav.tabs button {
+    background: #f39c12;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+nav.tabs button:hover {
+    background: #e67e22;
+    transform: scale(1.1);
+}
+
+main {
+    flex: 1;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.workout-category {
+    margin: 20px 0;
+}
+
+.workout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+input[type="number"], input[type="text"], input[type="time"] {
+    width: 80%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #27ae60;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2ecc71;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.responsive-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: #2c3e50;
+}
+
+body.dark-mode header h1, body.dark-mode header p {
+    color: #fff;
+}
+
+body.dark-mode nav.tabs button {
+    background: #34495e;
+    color: #fff;
+}
+
+body.dark-mode nav.tabs button:hover {
+    background: #2c3e50;
+}
+
+body.dark-mode .workout-category, body.dark-mode .workout {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode button {
+    background: #16a085;
+}
+
+body.dark-mode button:hover {
+    background: #1abc9c;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

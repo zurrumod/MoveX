@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoveX - Fitness App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>MoveX</h1>
+        <p>Your Ultimate Fitness Companion</p>
+    </header>
+
+    <nav class="tabs">
+        <button onclick="switchTab('home')"><i class="fas fa-home"></i> Home</button>
+        <button onclick="switchTab('workouts')"><i class="fas fa-dumbbell"></i> Workouts</button>
+        <button onclick="switchTab('progress')"><i class="fas fa-chart-line"></i> Progress</button>
+        <button onclick="switchTab('settings')"><i class="fas fa-cog"></i> Settings</button>
+        <button onclick="switchTab('reminders')"><i class="fas fa-bell"></i> Reminders</button>
+        <button onclick="switchTab('music')"><i class="fas fa-music"></i> Music</button>
+    </nav>
+
+    <main>
+        <section id="home" class="tab-content active">
+            <h2>Welcome to MoveX!</h2>
+            <p>Track your workouts, monitor your progress, and stay fit!</p>
+            <div class="image-container">
+                <img src="movex.png" alt="Fitness" class="responsive-image">
+            </div>
+        </section>
+
+        <section id="workouts" class="tab-content">
+            <h2>Workouts</h2>
+            <div class="workout-category">
+                <h3>Strength Training</h3>
+                <div class="workout">
+                    <span>Pushups</span>
+                    <input type="number" id="pushups-input" min="1" placeholder="Reps">
+                    <button onclick="trackWorkout('Pushups')">Track</button>
+                </div>
+                <div class="workout">
+                    <span>Squats</span>
+                    <input type="number" id="squats-input" min="1" placeholder="Reps">
+                    <button onclick="trackWorkout('Squats')">Track</button>
+                </div>
+            </div>
+            <div class="workout-category">
+                <h3>Cardio</h3>
+                <div class="workout">
+                    <span>Running</span>
+                    <input type="number" id="running-input" min="1" placeholder="Minutes">
+                    <button onclick="trackWorkout('Running')">Track</button>
+                </div>
+                <div class="workout">
+                    <span>Jumping Jacks</span>
+                    <input type="number" id="jumping-jacks-input" min="1" placeholder="Reps">
+                    <button onclick="trackWorkout('Jumping Jacks')">Track</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="progress" class="tab-content">
+            <h2>Your Progress</h2>
+            <div class="completed-list"></div>
+            <div class="progress-summary">
+                <h3>Overall Progress</h3>
+                <p id="progress-summary">You have not tracked any workouts yet.</p>
+            </div>
+        </section>
+
+        <section id="settings" class="tab-content">
+            <h2>Settings</h2>
+            <p>Adjust your preferences:</p>
+            <label>
+                <input type="checkbox" id="dark-mode-toggle" onchange="toggleDarkMode()"> Dark Mode
+            </label>
+            <br>
+            <label>
+                Set daily workout goal (Reps/Minutes):
+                <input type="number" id="daily-goal" placeholder="Goal" min="1">
+            </label>
+            <br>
+            <button onclick="saveGoal()">Save Goal</button>
+            <br>
+            <label>
+                Set your username:
+                <input type="text" id="username" placeholder="Enter your name">
+            </label>
+            <br>
+            <button onclick="saveUsername()">Save Username</button>
+        </section>
+
+        <section id="reminders" class="tab-content">
+            <h2>Reminders</h2>
+            <p>Set a reminder for your daily workout:</p>
+            <input type="time" id="reminder-time">
+            <button onclick="setReminder()">Set Reminder</button>
+        </section>
+
+        <section id="music" class="tab-content">
+            <h2>Music</h2>
+            <p>Play some motivating music while you workout!</p>
+            <button onclick="playMusic()">Play Music</button>
+            <button onclick="pauseMusic()">Pause Music</button>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 MoveX. Keep moving, stay healthy!
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
